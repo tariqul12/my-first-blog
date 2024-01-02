@@ -1,5 +1,5 @@
 @extends("master")
-@section("bitm")
+@section("title")
     Home Page
 @endsection
 @section("body")

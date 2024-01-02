@@ -1,5 +1,5 @@
 @extends("master")
-@section("bitm")
+@section("title")
     About page
 @endsection
 @section("body")
@@ -14,9 +14,8 @@
                             <h4>{{$blog["title"]}}</h4>
                             <p>{{$blog["des"]}}</p>
                             <hr>
-                            <a class="btn btn-success" href="">Details</a>
+                            <a class="btn btn-success" href="{{route('detail',['id'=>$blog['id']])}}">Details</a>
                         </div>
-
                     </div>
                 </div>
                 @endforeach

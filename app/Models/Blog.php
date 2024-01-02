@@ -44,5 +44,15 @@ class Blog extends Model
     {
         return self::$blogs;
     }
+    public static function getBlogById($id)
+    {
+        foreach (self::$blogs as $blog)
+        {
+            if ($blog['id']==$id)
+            {
+                return $blog;
+            }
+        }
+    }
 
 }
