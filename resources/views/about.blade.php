@@ -16,7 +16,6 @@
                             <hr>
                             <a class="btn btn-success" href="">Details</a>
                         </div>
-
                     </div>
                 </div>
                 @endforeach
