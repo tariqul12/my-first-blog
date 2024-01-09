@@ -17,6 +17,8 @@
             <li><a href="{{route("about")}}" class="nav-link">About</a></li>
             <li><a href="{{route("contact")}}" class="nav-link">Contact</a></li>
             <li><a href="{{route("series")}}" class="nav-link">Seris</a></li>
+            <li><a href="{{route("blog.add")}}" class="nav-link">Add Blog</a></li>
+            <li><a href="{{route("blog.manage")}}" class="nav-link">Manage Blog</a></li>
         </ul>
     </div>
 </nav>

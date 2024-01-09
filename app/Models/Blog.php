@@ -8,51 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     use HasFactory;
-    public static $blogs=[
-        0=>[
-            'id'=>1,
-            'title'=>"this is blog one",
-            'img'=>'img/1.jpg',
-            'des'=>"this is blog title one"
-        ],
-        1=>[
-            'id'=>2,
-            'title'=>"this is blog two",
-            'img'=>'img/2.jpg',
-            'des'=>"this is blog title two"
-        ],
-        2=>[
-            'id'=>3,
-            'title'=>"this is blog three",
-            'img'=>'img/3.jpg',
-            'des'=>"this is blog title three"
-        ],
-        3=>[
-            'id'=>4,
-            'title'=>"this is blog fore",
-            'img'=>'img/4.jpg',
-            'des'=>"this is blog title fore"
-        ],
-        4=>[
-            'id'=>5,
-            'title'=>"this is blog five",
-            'img'=>'img/5.jpg',
-            'des'=>"this is blog title five"
-        ],
-    ];
-    public static function GetAllBlog()
+
+    private static $blog;
+
+    public static function createBlog($request)
     {
-        return self::$blogs;
-    }
-    public static function getBlogById($id)
-    {
-        foreach (self::$blogs as $blog)
-        {
-            if ($blog['id']==$id)
-            {
-                return $blog;
-            }
-        }
+        self::$blog=new Blog();
+        self::$blog->title=$request->title;
+        self::$blog->description=$request->description;
+        self::$blog->image=$request->image;
+        self::$blog->save();
+
     }
 
 }

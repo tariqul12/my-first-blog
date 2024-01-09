@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeContrller;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,7 @@ Route::get('/detail/{id}',[HomeContrller::class,"detail"])->name('detail');
 Route::post('make-full-name',[HomeContrller::class,"makeFullName"])->name('make-full-name');
 Route::get('/series',[HomeContrller::class,'series'])->name("series");
 Route::post('make_series',[HomeContrller::class,"makeSeries"])->name('make_series');
+
+Route::get('/add-blog',[BlogController::class,'index'])->name('blog.add');
+Route::post('/new-blog',[BlogController::class,'saveBlog'])->name('blog.new');
+Route::get('/manage-blog',[BlogController::class,'manageBlog'])->name('blog.manage');
