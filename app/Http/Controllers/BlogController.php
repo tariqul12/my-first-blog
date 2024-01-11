@@ -13,6 +13,7 @@ class BlogController extends Controller
     }
     public function saveBlog(Request $request)
     {
+
         Blog::createBlog($request);
 
         return redirect(route('blog.add'));
@@ -22,5 +23,19 @@ class BlogController extends Controller
         return view('blog.manage',[
             'blogs'=>Blog::all()
         ]);
+    }
+    public function editBlog($id)
+    {
+        return view('blog.edit',['blog'=>Blog::find($id)]);
+    }
+    public function updateBlog(Request $request)
+    {
+       Blog::updateBlog($request);
+       return redirect(route('blog.manage'))->with('message','info update successfully');
+    }
+    public function deleteBlog(Request $request)
+    {
+        Blog::deleteBlog($request->id);
+        return redirect(route('blog.manage'))->with('message','info deleted');
     }
 }

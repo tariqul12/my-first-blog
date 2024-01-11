@@ -25,3 +25,6 @@ Route::post('make_series',[HomeContrller::class,"makeSeries"])->name('make_serie
 Route::get('/add-blog',[BlogController::class,'index'])->name('blog.add');
 Route::post('/new-blog',[BlogController::class,'saveBlog'])->name('blog.new');
 Route::get('/manage-blog',[BlogController::class,'manageBlog'])->name('blog.manage');
+Route::get('/edit-blog/{id}',[BlogController::class,'editBlog'])->name('blog.edit');
+Route::post('/update-blog',[BlogController::class,'updateBlog'])->name('blog.update');
+Route::post('/delete-blog',[BlogController::class,'deleteBlog'])->name('blog.delete');
